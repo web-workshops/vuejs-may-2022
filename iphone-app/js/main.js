@@ -7,6 +7,7 @@ const myApp = Vue.createApp({
       image: "./images/iphone-13-blue.png",
       //inStock: false,
       quantity: 5,
+      specs: ["5G speed", "Edge-to-edge OLED display", "Ceramic Shield"],
     };
   },
 });

@@ -24,6 +24,9 @@
             <p v-if="quantity > 5">In stock</p>
             <p v-else-if="(quantity > 0) && (quantity <=5)">Almost sold out</p>
             <p v-else>Out of Stock</p>
+            <ul>
+              <li v-for="spec in specs" :key="spec">{{spec}}</li>
+            </ul>
           </div>
         </div>
       </div>
