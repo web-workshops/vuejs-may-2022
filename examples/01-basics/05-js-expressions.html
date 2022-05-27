@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Examples</title>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{age+2}}</div>
+      <div>{{age>=18 ? "Olg enough" : "Too young"}}</div>
+      <div>{{ message.split('').reverse().join('') }}</div>
+      <div :id="'item-'+id">my ID</div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            age: 20,
+            message: "Welcome to Vue.js",
+            id: 15,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
