@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iPhone - App</title>
+    <title>iPhone13 - Store</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-info">
+            <h1>{{product}}</h1>
+            <p>{{description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./js/main.js"></script>
   </body>
 </html>
