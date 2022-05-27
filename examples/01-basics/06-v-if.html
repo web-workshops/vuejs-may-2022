@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Examples</title>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Server status</h1>
+      <p v-if="isActive">Server is UP</p>
+      <p v-else>Server is DOWN</p>
+      <p v-show="isActive">Server is UP</p>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            isActive: false,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
