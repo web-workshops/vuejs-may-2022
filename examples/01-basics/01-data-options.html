@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Examples</title>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{ message }}</h2>
+      <p>{{ text }}</p>
+      <p>{{ "Counter: " + counter }}</p>
+      <p>Counter: {{ counter }}</p>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: "Welcome to Vue.js workshop",
+            text: "lorem ipsum",
+            counter: 10,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
