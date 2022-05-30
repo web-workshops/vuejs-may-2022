@@ -55,4 +55,7 @@ const myApp = Vue.createApp({
     },
   },
 });
+myApp.component("navbar", {
+  template: `<div class="nav-bar"></div>`,
+});
 myApp.mount("#app");
