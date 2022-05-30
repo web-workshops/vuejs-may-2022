@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Examples</title>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <my-component message="Welcome to Vue.js"></my-component>
+      <my-component message="Welcome to Angular"></my-component>
+      <my-component message="Welcome to React"></my-component>
+    </div>
+    <script>
+      const myApp = Vue.createApp({
+        data() {
+          return {};
+        },
+      });
+      myApp.component("my-component", {
+        template: "<h1>{{ message }}</h1>",
+        props: ["message"],
+      });
+      myApp.mount("#app");
+    </script>
+  </body>
+</html>
