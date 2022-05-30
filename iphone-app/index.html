@@ -30,9 +30,9 @@
               <li v-for="spec in specs" :key="spec">{{spec}}</li>
             </ul>
             <div
-              v-for="variant in variants"
+              v-for="(variant, index) in variants"
               :key="variant.ref"
-              @mouseover="updateImage(variant.image)"
+              @mouseover="activeVariant = index"
               class="color-circle"
               :style="{ backgroundColor: variant.color }"
             ></div>
