@@ -38,7 +38,7 @@ const myApp = Vue.createApp({
     },
   },
   computed: {
-    inStock() {
+    stockStatus() {
       if (this.variants[this.activeVariant].quantity > 5) {
         return "In Stock";
       } else if (this.variants[this.activeVariant].quantity > 0) {
@@ -49,6 +49,9 @@ const myApp = Vue.createApp({
     },
     image() {
       return this.variants[this.activeVariant].image;
+    },
+    inStock() {
+      return this.variants[this.activeVariant].quantity > 0;
     },
   },
 });
