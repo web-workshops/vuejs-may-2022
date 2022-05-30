@@ -39,7 +39,7 @@ myApp.component("product-component", {
           :style="{ backgroundColor: variant.color }"
         ></div>
         <button
-          @click="cart++"
+          @click="$emit('add-to-cart')"
           class="button"
           :disabled="!inStock"
           :class="{ disabledButton : !inStock }"
