@@ -55,7 +55,11 @@ const myApp = Vue.createApp({
     },
   },
 });
-myApp.component("navbar", {
+myApp.component("navbar-component", {
   template: `<div class="nav-bar"></div>`,
+});
+myApp.component("cart-component", {
+  template: `<div class="cart">Cart({{ cart }})</div>`,
+  props: ["cart"],
 });
 myApp.mount("#app");
