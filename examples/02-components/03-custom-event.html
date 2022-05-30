@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Examples</title>
+    <script src="https://unpkg.com/vue@3.2.36/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button-counter @increment="count++"></button-counter>
+      <h2>You clicked the button {{ count }} times</h2>
+    </div>
+    <script>
+      const myApp = Vue.createApp({
+        data() {
+          return {
+            count: 0,
+          };
+        },
+      });
+      myApp.component("button-counter", {
+        template: `<button @click="$emit('increment')">+1</button>`,
+      });
+      myApp.mount("#app");
+    </script>
+  </body>
+</html>
