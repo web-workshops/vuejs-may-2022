@@ -2,6 +2,61 @@ const myApp = Vue.createApp({
   data() {
     return {
       cart: 0,
+    };
+  },
+  // methods: {
+  //   updateImage(newImage) {
+  //     this.image = newImage;
+  //   },
+  // },
+});
+myApp.component("navbar-component", {
+  template: `<div class="nav-bar"></div>`,
+});
+myApp.component("cart-component", {
+  template: `<div class="cart">Cart({{ cart }})</div>`,
+  props: ["cart"],
+});
+myApp.component("product-component", {
+  template: `
+    <div class="product-display">
+    <div class="product-container">
+      <div class="product-image">
+        <img :src="'./images/'+image" :alt="product" />
+      </div>
+      <div class="product-info">
+        <h2>{{product}}</h2>
+        <p>{{description}}</p>
+        <!-- <p v-if="inStock">In stock</p>
+        <p v-else>Out of Stock</p> -->
+        <!-- <p v-if="quantity > 5">In stock</p>
+        <p v-else-if="(quantity > 0) && (quantity <=5)">Almost sold out</p>
+        <p v-else>Out of Stock</p> -->
+        <p>{{ stockStatus }}</p>
+        <ul>
+          <li v-for="spec in specs" :key="spec">{{spec}}</li>
+        </ul>
+        <div
+          v-for="(variant, index) in variants"
+          :key="variant.ref"
+          @mouseover="activeVariant = index"
+          class="color-circle"
+          :style="{ backgroundColor: variant.color }"
+        ></div>
+        <button
+          @click="cart++"
+          class="button"
+          :disabled="!inStock"
+          :class="{ disabledButton : !inStock }"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+  `,
+  data() {
+    return {
       product: "iPhone 13",
       description:
         "iPhone 13 is the latest iPhone in the iPhone series. It is powered by a 2.84-GHz dual-core processor and has a camera system that can take up to 8 photos in a single burst.",
@@ -32,11 +87,6 @@ const myApp = Vue.createApp({
       activeVariant: 0,
     };
   },
-  methods: {
-    updateImage(newImage) {
-      this.image = newImage;
-    },
-  },
   computed: {
     stockStatus() {
       if (this.variants[this.activeVariant].quantity > 5) {
@@ -54,12 +104,5 @@ const myApp = Vue.createApp({
       return this.variants[this.activeVariant].quantity > 0;
     },
   },
-});
-myApp.component("navbar-component", {
-  template: `<div class="nav-bar"></div>`,
-});
-myApp.component("cart-component", {
-  template: `<div class="cart">Cart({{ cart }})</div>`,
-  props: ["cart"],
 });
 myApp.mount("#app");
