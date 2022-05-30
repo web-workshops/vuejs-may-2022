@@ -22,9 +22,10 @@
             <p>{{description}}</p>
             <!-- <p v-if="inStock">In stock</p>
             <p v-else>Out of Stock</p> -->
-            <p v-if="quantity > 5">In stock</p>
+            <!-- <p v-if="quantity > 5">In stock</p>
             <p v-else-if="(quantity > 0) && (quantity <=5)">Almost sold out</p>
-            <p v-else>Out of Stock</p>
+            <p v-else>Out of Stock</p> -->
+            <p>{{ inStock }}</p>
             <ul>
               <li v-for="spec in specs" :key="spec">{{spec}}</li>
             </ul>

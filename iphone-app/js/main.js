@@ -33,5 +33,16 @@ const myApp = Vue.createApp({
       this.image = newImage;
     },
   },
+  computed: {
+    inStock() {
+      if (this.quantity >= 5) {
+        return "In Stock";
+      } else if (this.quantity > 0) {
+        return "Limited Stock";
+      } else {
+        return "Out of Stock";
+      }
+    },
+  },
 });
 myApp.mount("#app");
