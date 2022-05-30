@@ -1,4 +1,5 @@
 import navbarComponent from "./modules/Navbar.js";
+import cartComponent from "./modules/Cart.js";
 
 const myApp = Vue.createApp({
   data() {
@@ -9,10 +10,7 @@ const myApp = Vue.createApp({
 });
 myApp.component("navbar-component", navbarComponent);
 
-myApp.component("cart-component", {
-  template: `<div class="cart">Cart({{ cart }})</div>`,
-  props: ["cart"],
-});
+myApp.component("cart-component", cartComponent);
 myApp.component("product-component", {
   template: `
     <div class="product-display">
