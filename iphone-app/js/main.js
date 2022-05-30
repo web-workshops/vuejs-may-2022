@@ -4,11 +4,6 @@ const myApp = Vue.createApp({
       cart: 0,
     };
   },
-  // methods: {
-  //   updateImage(newImage) {
-  //     this.image = newImage;
-  //   },
-  // },
 });
 myApp.component("navbar-component", {
   template: `<div class="nav-bar"></div>`,
