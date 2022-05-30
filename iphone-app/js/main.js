@@ -17,7 +17,7 @@ const myApp = Vue.createApp({
         },
         {
           ref: "ip13mn002",
-          color: "midnight",
+          color: "black",
           image: "iphone-13-midnight.png",
         },
         {
